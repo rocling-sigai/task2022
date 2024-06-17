@@ -25,6 +25,13 @@
 }
 
 /* ==================================================== */
+.caption {
+            caption-side: top;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 10px;
+        }
 
 .topflex {
     display: flex;
