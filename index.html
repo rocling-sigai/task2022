@@ -1,0 +1,616 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ROCLING 2022 Shared Task</title>
+
+    
+    <!-- 匯入bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <!-- 匯入jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- 插入方程式 -->
+    <script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<!-- ============================================================================ -->
+
+
+    <div>
+        <nav class="nav navbar-default navbar-fixed-top topflex" id="topdiv">
+
+            <div class="navbar-header" id="navheader">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsingNavbarMd">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-collapse-center" id="collapsingNavbarMd">
+                <ul class="nav navbar-nav navbar-center" >
+
+                    <li class="single"><a href="javascript:;" class="navItems" navTo="#intro">Background</a></li>
+
+                    <li class="single"><a href="javascript:;" class="navItems" navTo="#task">Task Description</a></li>
+
+                    <li class="single"><a href="javascript:;" class="navItems" navTo="#registration">Data</a></li>
+
+                    <li class="single"><a href="javascript:;" class="navItems" navTo="#key_note">Evaluation</a></li>
+                    
+                    <li class="single"><a href="javascript:;" class="navItems" navTo="#special">Important Date</a></li>
+                    
+                    <li class="single"><a href="javascript:;" class="navItems" navTo="#ref">References</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+   
+
+    <!-- ============================================================================ -->
+
+    <div class="welcome">
+        <div class="wrap">
+            <div class="item text">
+                <h1>ROCLING 2022 Shared Task 1<br>
+                  Chinese Healthcare Named Entity Recognition</h1>
+                <div class="session">
+                    <h2>
+                        Organizers
+                    </h2>
+                    <div class="people">
+                        <div class="author">
+                            <p>
+                                <strong>李龍豪 Lung-Hao Lee、陳昭沂 Chao-Yi Chen</strong><br>
+                                國立中央大學 電機工程學系<br>
+                                Department of Electrical Engineering<br>
+                                National Central University<br>
+                            </p>
+                        </div>
+
+                        <div class="author">
+                          <p>
+                              <strong>禹良治 Liang-Chih Yu</strong><br>
+                              元智大學 資訊管理學系<br>
+                              Department of Information Management<br>
+                              Yuan Ze University<br>
+                          </p>
+                      </div>
+
+                      <div class="author">
+                        <p>
+                            <strong>曾元顯 Yuen-Hsien Tseng</strong><br>
+                            國立臺灣師範大學 圖書資訊學研究所<br>
+                            Graduate Institute of Library and Information Studies<br>
+                            National Taiwan Normal University<br>
+                        </p>
+                    </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>    
+    </div>
+
+    <!-- ============================================================================ -->
+
+    <div class="introduction" id="intro">
+        
+        <div class="introduce_div_before">
+            <div class="introduce_div">
+                <h1>Background</h1>
+                <p>Named Entity Recognition (NER) is a fundamental task in information extraction that locates the mentions of named entities and classifies them (e.g., person, organization and location) in unstructured texts. The NER task has traditionally been solved as a sequence labeling problem, where entity boundaries and category labels are jointly predicted. Various methods have been proposed to tackle this research problem, including Hidden Markov Models (HMM) (Ponomareva et al., 2007), Maximum Entropy Markov Models (MEMM) (Chieu and Ng, 2003) and Conditional Random Field (CRF) (Wei et al., 2015). Recently, neural networks have been shown to achieve impressive results. The current state-of-the-art for English NER has been achieved by using LSTM (Long Short-Term Memory)- CRF based networks (Chiu and Nichols, 2016; Lample et al., 2016; Ma and Hovy, 2016; Liu et al., 2018).</p>
+                <p>Chinese NER is more difficult to process than English NER. Chinese language is logographic and provides no conventional features like capitalization. In addition, due to a lack of delimiters between characters, Chinese NER is correlated with word segmentation, and named entity boundaries are also word boundaries. However, incorrectly segmented entity boundaries will cause error propagation in NER. For example, in a particular context, a disease entity “思覺失調症” (schizophrenia) may be incorrectly segmented into three words: “思覺” (thinking and feeling), “失調” (disorder) and “症” (disease). Hence, it has been shown that character-based methods outperform word-based approaches for Chinese NER (He and Wang, 2008; Li et al., 2014; Zhang and Yang, 2018).</p>
+                <p>In the digital era, healthcare information-seeking users usually search and browse web content in click-through trails to obtain healthcare-related information before making a doctor’s appointment for diagnosis and treatment. Web texts are valuable sources to provide healthcare information such as health-related news, digital health magazines and medical question/answer forums. Domain-specific healthcare information includes many proper names, mainly as named entities. For example, “三酸甘油酯” (triglyceride) is a chemical found in the human body; “電腦斷層掃描” (computed tomography; CT) is medical imaging procedure that uses computer-processed combinations of X-ray measurements to produce tomographic images of specific areas of the human body, and “靜脈免疫球蛋白注射” (intravenous immunoglobulin; IVIG) is a kind of treatment for avoiding infections. In summary, Chinese healthcare NER is an important and essential task in natural language processing to automatically identify healthcare entities such as symptoms, chemicals, diseases, and treatments for machine reading and understanding.</p>
+            </div>
+<!--             <div class="figure"> -->
+                <!-- <p>If you have any questions, </p> -->
+                
+<!--             </div> -->
+        </div>
+    </div>
+    
+    <!-- ============================================================================ -->
+
+    <div class='task' id='task'>
+        
+        <div class="introduce_div_before">
+            <div class="introduce_div">
+                <h1>Task Description</h1>
+                <p>A total of 10 entity types are described and some examples are provided in Table I for Chinese healthcare named entity recognition. In this task, participants are asked to predict the named entity boundaries and categories for each given sentence. We use the common BIO (Beginning, Inside, and Outside) format for NER tasks. The B-prefix before a tag indicates that the character is the beginning of a named entity and I-prefix before a tag indicates that the character is inside a named entity. An O tag indicates that a token belongs to no named entity. Below are the example sentences.</p>
+                <div class="part">
+                    <h3>Example 1</h3>
+                    <p>Input: 修復肌肉與骨骼最重要的便是熱量、蛋白質與鈣質。</p>
+                    <p>Output: O, O, B-BODY, I-BODY, O, B-BODY, I-BODY, O, O, O, O, O, O, O, O, O, B-CHEM, I-CHEM, I-CHEM, O, B-CHEM, I-CHEM, O</p>
+                    <p></p>
+                    <h3>Example 2</h3>
+                    <p>Input: 如何治療胃食道逆流症？</p>
+                    <p>Output: O, O, O, O, B-DISE, I-DISE, I-DISE, I-DISE, I-DISE, I-DISE, O</p>
+                    <p></p>
+                </div>
+                <style type="text/css">
+                  .tg  {border-collapse:collapse;border-spacing:0;}
+                  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+                    overflow:hidden;padding:10px 5px;word-break:normal;}
+                  .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+                    font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+                  .tg .tg-7zrf{background-color:#F3F4F3;border-color:inherit;color:#212121;font-weight:bold;text-align:left;vertical-align:top}
+                  .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+                  </style>
+                  <table class="tg"><thead>
+                    <tr>
+                      <th class="tg-7zrf"><span style="font-weight:bolder">Entity Type</span></th>
+                      <th class="tg-0pky">Description</th>
+                      <th class="tg-0pky"><span style="font-weight:bolder;font-style:normal">Examples</span></th>
+                    </tr></thead>
+                  <tbody>
+                    <tr>
+                      <td class="tg-0pky">Body (BODY)</td>
+                      <td class="tg-0pky">The whole physical structure that forms a person or animal including biological cells, organizations, organs and systems.</td>
+                      <td class="tg-0pky">“細胞核” (nucleus), “神經組織” (nerve tissue), “左心房” (left atrium), “脊髓” (spinal cord), “呼吸系統” (respiratory system)</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0pky">Symptom (SYMP)</td>
+                      <td class="tg-0pky">Any feeling of illness or physical or mental change that is caused by a particular disease.</td>
+                      <td class="tg-0pky">“流鼻水” (rhinorrhea), “咳嗽” (cough), “貧血” (anemia), “失眠” (insomnia), “心悸” (palpitation), “耳鳴” (tinnitus)</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0pky">Instrument (INST)</td>
+                      <td class="tg-0pky">A tool or other device used for performing a particular medical task such as diagnosis and treatments.</td>
+                      <td class="tg-0pky">“血壓計” (blood pressure meter), “達文西手臂” (DaVinci Robots), “體脂肪計” (body fat monitor), “雷射手術刀” (laser scalpel)</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0pky">Examination (EXAM)</td>
+                      <td class="tg-0pky">The act of looking at or checking something carefully in order to discover possible diseases.</td>
+                      <td class="tg-0pky">“聽力檢查” (hearing test), “腦電波圖” (electroencephalography; EEG), “核磁共振造影” (magnetic resonance imaging; MRI)</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0pky">Chemical (CHEM)</td>
+                      <td class="tg-0pky">Any basic chemical element typically found in the human body.</td>
+                      <td class="tg-0pky">“去氧核糖核酸” (deoxyribonucleic acid; DNA), “糖化血色素” (glycated hemoglobin), “膽固醇” (cholesterol), “尿酸” (uric acid)</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0pky">Disease (DISE)</td>
+                      <td class="tg-0pky">An illness of people or animals caused by infection or a failure of health rather than by an accident.</td>
+                      <td class="tg-0pky">“小兒麻痺症” (poliomyelitis; polio), “帕金森氏症” (Parkinson’s disease), “青光眼” (glaucoma), “肺結核” (tuberculosis)</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0pky">Drug (DRUG)</td>
+                      <td class="tg-0pky">Any natural or artificially made chemical used as a medicine.</td>
+                      <td class="tg-0pky">“阿斯匹靈” (aspirin), “普拿疼” (acetaminophen), “青黴素” (penicillin), “流感疫苗” (influenza vaccination)</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0pky">Supplement (SUPP)</td>
+                      <td class="tg-0pky">Something added to something else to improve human health.</td>
+                      <td class="tg-0pky">“維他命” (vitamin), “膠原蛋白” (collagen), “益生菌” (probiotics), “葡萄糖胺” (glucosamine), “葉黃素” (lutein)</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0pky">Treatment (TREAT)</td>
+                      <td class="tg-0pky">A method of behavior used to treat diseases.</td>
+                      <td class="tg-0pky">“藥物治療” (pharmacotherapy), “胃切除術” (gastrectomy), “標靶治療” (targeted therapy), “外科手術” (surgery)</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-0pky">Time (TIME)</td>
+                      <td class="tg-0pky">Element of existence measured in minutes, days, years.</td>
+                      <td class="tg-0pky">“嬰兒期” (infancy), “幼兒時期” (early childhood), “青春期” (adolescence), “生理期” (on one’s period), “孕期” (pregnancy)</td>
+                    </tr>
+                  </tbody></table>
+            </div>  
+        </div>
+    </div>
+
+
+    <!-- ============================================================================ -->
+
+    <div class="registration" id="registration">
+        
+        <div class="introduce_div_before">
+            <div class="introduce_div">
+                <h1>Data</h1>
+                <br>
+                <h2>Training Set: <a href="https://github.com/NCUEE-NLPLab/Chinese-HealthNER-Corpus">Chinese HealthNER Corpus (Lee and Lu, 2021)</a></h2>
+                <br>
+                <p>It includes 30,692 sentences with a total around 1.5 million characters or 91.7 thousand words. After manual annotation, we have 68,460 named entities across 10 entity types: body, symptom, instrument, examination, chemical, disease, drug, supplement, treatment, and time.</p>
+                <br>
+                <h2>Test set:</h2>
+                <p>at least 3,000 Chinese sentences will be provided for system performance evaluation.</p>
+                <div class="part">
+                  <h3 style="color: red;">Notes</h3>
+                  <p>The policy of this shared task is an open test. Participating systems are allowed to use other publicly available data for this shared task, but the use of other data should be specified in the final system description paper.</p>
+              </div>
+              </div>  
+        </div>
+    </div>
+    
+    <!-- ============================================================================ -->
+
+    <div class="keynote" id="key_note">
+        
+        <div class="introduce_div_before">
+            <div class="introduce_div">
+                <h1>Evaluation</h1>
+                <p>The performance is evaluated by examining the difference between machine-predicted labels and human-annotated labels. We adopt standard precision, recall, and F1-score, which are the most typical evaluation metrics of NER systems at a character level. If the predicted tag of a character in terms of BIO format was completely identical with the gold standard, that is one of the defined BIO tags, the character in the testing instance was regarded as correctly recognized. Precision is defined as the percentage of named entities found by the NER system that are correct. Recall is the percentage of named entities present in the test set found by the NER system.</p>
+            </div>  
+        </div>
+   
+    </div>
+
+    <!-- ============================================================================ -->
+    <!-- <div class="introduction" id="ranking">
+        <div class="introduce_div_before">
+            <div class="introduce_div">
+                <h1>Official Ranking</h1>
+                
+                <p>Notes: Each metric in individual subtask is ranked independently. (*) means the rank for each metric. A system’s overall ranking is computed based on the cumulative rank. The lower the cumulative rank, the better the system performance.</p>
+                <br>  
+                <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0;}
+            .tg td{border-color:black;border-style:solid;border-width:1px;font-size:20px;
+              overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg th{border-color:black;border-style:solid;border-width:1px;font-size:20px;
+              font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:center;font-size:20px}
+            </style>
+            <table class="tg"><thead>
+              <tr>
+                <th class="tg-c3ow" colspan="7"> <strong>Subtask 1: Intensity Prediction </strong></th>
+              </tr></thead>
+            <tbody>
+              <tr>
+                <td class="tg-c3ow" rowspan="2">Team</td>
+                <td class="tg-c3ow" rowspan="2">Sub#</td>
+                <td class="tg-c3ow" colspan="4">Evaluation Metrics</td>
+                <td class="tg-c3ow" rowspan="2">Overall Rank</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">V-MAE</td>
+                <td class="tg-c3ow">V-PCC</td>
+                <td class="tg-c3ow">A-MAE</td>
+                <td class="tg-c3ow">A-PCC</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">HITSZ-HLT</td>
+                <td class="tg-c3ow">63885</td>
+                <td class="tg-c3ow"><strong>0.279</strong> (1)</td>
+                <td class="tg-c3ow"><strong>0.933</strong> (1)</td>
+                <td class="tg-c3ow"><strong>0.309</strong> (1)</td>
+                <td class="tg-c3ow"><strong>0.777</strong> (1)</td>
+                <td class="tg-c3ow">1</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">CCIIPLab</td>
+                <td class="tg-c3ow">63706</td>
+                <td class="tg-c3ow">0.294 (2)</td>
+                <td class="tg-c3ow">0.916 (3)</td>
+                <td class="tg-c3ow"><strong>0.309</strong> (1)</td>
+                <td class="tg-c3ow">0.766 (3)</td>
+                <td class="tg-c3ow">2</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">YNU-HPCC</td>
+                <td class="tg-c3ow">63756</td>
+                <td class="tg-c3ow">0.294 (2)</td>
+                <td class="tg-c3ow">0.917 (2)</td>
+                <td class="tg-c3ow">0.318 (3)</td>
+                <td class="tg-c3ow">0.771 (2)</td>
+                <td class="tg-c3ow">2</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">DS-Group</td>
+                <td class="tg-c3ow">62014</td>
+                <td class="tg-c3ow">0.460 (4)</td>
+                <td class="tg-c3ow">0.858 (5)</td>
+                <td class="tg-c3ow">0.501 (4)</td>
+                <td class="tg-c3ow">0.490 (4)</td>
+                <td class="tg-c3ow">4</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">yangnan</td>
+                <td class="tg-c3ow">61884</td>
+                <td class="tg-c3ow">1.032 (5)</td>
+                <td class="tg-c3ow">0.877 (4)</td>
+                <td class="tg-c3ow">1.095 (5)</td>
+                <td class="tg-c3ow">0.097 (5)</td>
+                <td class="tg-c3ow">5</td>
+              </tr>
+            </tbody></table>
+
+            <br>
+
+            <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0;}
+            .tg td{border-color:black;border-style:solid;border-width:1px;font-size:20px;
+              overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg th{border-color:black;border-style:solid;border-width:1px;font-size:20px;
+              font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg .tg-baqh{text-align:center;vertical-align:center;font-size:20px}
+            .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:center;font-size:20px}
+                table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%; /* 根据需要调整宽度 */
+        }
+            </style>
+            <table class="tg"><thead>
+              <tr>
+                <th class="tg-c3ow" colspan="6"> <strong> Subtask 2: Triplet Extraction </strong></th>
+              </tr></thead>
+            <tbody>
+              <tr>
+                <td class="tg-c3ow" rowspan="2">Team</td>
+                <td class="tg-c3ow" rowspan="2">Sub#</td>
+                <td class="tg-c3ow" colspan="3">Evaluation Metrics</td>
+                <td class="tg-c3ow" rowspan="2">Overall Rank</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">V-Tri-F1</td>
+                <td class="tg-c3ow">A-Tri-F1</td>
+                <td class="tg-c3ow">VA-Tri-F1</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">HITSZ-HLT</td>
+                <td class="tg-c3ow">63885</td>
+                <td class="tg-c3ow"><strong>0.589</strong> (1)</td>
+                <td class="tg-c3ow"><strong>0.545</strong> (1)</td>
+                <td class="tg-c3ow"><strong>0.433</strong> (1)</td>
+                <td class="tg-c3ow">1</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">CCIIPLab</td>
+                <td class="tg-c3ow">63824</td>
+                <td class="tg-c3ow">0.573 (2)</td>
+                <td class="tg-c3ow">0.522 (2)</td>
+                <td class="tg-c3ow">0.403 (2)</td>
+                <td class="tg-c3ow">2</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">ZZU-NLP</td>
+                <td class="tg-c3ow">63737</td>
+                <td class="tg-c3ow">0.542 (3)</td>
+                <td class="tg-c3ow">0.507 (3)</td>
+                <td class="tg-c3ow">0.389 (3)</td>
+                <td class="tg-c3ow">3</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">BIT-NLP</td>
+                <td class="tg-c3ow">63766</td>
+                <td class="tg-c3ow">0.490 (4)</td>
+                <td class="tg-c3ow">0.450 (4)</td>
+                <td class="tg-c3ow">0.342 (4)</td>
+                <td class="tg-c3ow">4</td>
+              </tr>
+              <tr>
+                <td class="tg-c3ow">SUDA-NLP</td>
+                <td class="tg-c3ow">63827</td>
+                <td class="tg-c3ow">0.475 (5)</td>
+                <td class="tg-c3ow">0.448 (5)</td>
+                <td class="tg-c3ow">0.326 (5)</td>
+                <td class="tg-c3ow">5</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">TMAK-Plus</td>
+                <td class="tg-baqh">63972</td>
+                <td class="tg-baqh">0.269 (6)</td>
+                <td class="tg-baqh">0.307 (6)</td>
+                <td class="tg-baqh">0.157 (6)</td>
+                <td class="tg-baqh">6</td>
+              </tr>
+            </tbody></table>
+            
+            <br>
+
+            <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-size:20px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-size:20px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:center;font-size:20px}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:center;font-size:20px}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow" colspan="6"> <strong>Subtask 3: Quadruple Extraction</strong></th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow" rowspan="2">Team</td>
+    <td class="tg-c3ow" rowspan="2">Sub#</td>
+    <td class="tg-c3ow" colspan="3">Evaluation Metrics</td>
+    <td class="tg-c3ow" rowspan="2">Overall Rank</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">V-Quad-F1</td>
+    <td class="tg-c3ow">A-Quad-F1</td>
+    <td class="tg-c3ow">VA-Quad-F1</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">HITSZ-HLT</td>
+    <td class="tg-c3ow">63885</td>
+    <td class="tg-c3ow"><strong>0.567</strong> (1)</td>
+    <td class="tg-c3ow"><strong>0.526</strong> (1)</td>
+    <td class="tg-c3ow"><strong>0.417</strong> (1)</td>
+    <td class="tg-c3ow">1</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">CCIIPLab</td>
+    <td class="tg-c3ow">63832</td>
+    <td class="tg-c3ow">0.555 (2)</td>
+    <td class="tg-c3ow">0.507 (2)</td>
+    <td class="tg-c3ow">0.389 (2)</td>
+    <td class="tg-c3ow">2</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">ZZU-NLP</td>
+    <td class="tg-c3ow">61868</td>
+    <td class="tg-c3ow">0.522 (3)</td>
+    <td class="tg-c3ow">0.489 (3)</td>
+    <td class="tg-c3ow">0.376 (3)</td>
+    <td class="tg-c3ow">3</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">SUDA-NLP</td>
+    <td class="tg-c3ow">63622</td>
+    <td class="tg-c3ow">0.487 (4)</td>
+    <td class="tg-c3ow">0.444 (4)</td>
+    <td class="tg-c3ow">0.336 (4)</td>
+    <td class="tg-c3ow">4</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">JN-NLP</td>
+    <td class="tg-c3ow">63572</td>
+    <td class="tg-c3ow">0.482 (5)</td>
+    <td class="tg-c3ow">0.439 (5)</td>
+    <td class="tg-c3ow">0.331 (5)</td>
+    <td class="tg-c3ow">5</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">BIT-NLP</td>
+    <td class="tg-baqh">63766</td>
+    <td class="tg-baqh">0.470 (6)</td>
+    <td class="tg-baqh">0.434 (7)</td>
+    <td class="tg-baqh">0.329 (6)</td>
+    <td class="tg-baqh">6</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">USTC-IAT</td>
+    <td class="tg-baqh">63907</td>
+    <td class="tg-baqh">0.438 (7)</td>
+    <td class="tg-baqh">0.437 (6)</td>
+    <td class="tg-baqh">0.312 (7)</td>
+    <td class="tg-baqh">7</td>
+  </tr>
+</tbody></table>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- ============================================================================ -->
+
+    <!-- <div class='Tutorials' id='task_paper'>
+        
+        <div class="introduce_div_before">
+            <div class="introduce_div">
+                <h1>Task Paper</h1>
+                <p>If you have built a successful system and completed a submission on the leaderboard, we gladly invite you to submit a shared task paper to the SIGHAN 2024 workshop. If you would like to publish a paper, please carefully follow these instructions:</p>
+                <div class="part">
+                    <p>1.&nbsp;&nbsp;Write your paper using the <a href= https://github.com/acl-org/acl-style-files target="_blank">ACL 2024 template</a>.</p>
+                    <br>
+                    <p>2.&nbsp;&nbsp;Papers must be written in English.</p>
+                    <br>
+                    <p>3.&nbsp;&nbsp;Paper titles should adopt the format: <strong>“TEAM_NAME at SIGHAN-2024 dimABSA Task:”</strong> followed by a descriptive title of the proposed approach.</p>
+                    <br>
+                    <p>4.&nbsp;&nbsp;Submissions are not anonymous for review, so author names and affiliations could be included in the paper.</p>
+                    <br>
+                    <p>5.&nbsp;&nbsp;The page limitation is four pages (excluding references) for a single subtask; and the length limit is eight pages (excluding references) for multiple subtasks.</p>
+                    <br>
+                    <p>6.&nbsp;&nbsp;Please cite the following overview paper (just as we will cite your task paper).</p>
+                    <br>
+                    <p>Lung-Hao Lee, Liang-Chih Yu, Suge Wang, and Jian Liao. 2024. Overview of the SIGHAN 2024 shared task for Chinese dimensional aspect-based sentiment analysis. In <em>Proceedings of the 10th SIGHAN Workshop on Chinese Language Processing</em>. Association for Computational Linguistics.</p>
+                    <br>
+                    <p>7.&nbsp;&nbsp;Submission Deadline: <strong>17th June, 2024</strong> (anywhere on Earth)</p>
+                    <br>
+                    <p>8.&nbsp;&nbsp;Submission Site: <a href= https://openreview.net/group?id=aclweb.org/ACL/2024/Workshop/SIGHAN-10 target="_blank">OpenReview</a></p>
+                    <br>
+                    <p>9.&nbsp;&nbsp;<a href= https://docs.google.com/forms/d/e/1FAIpQLSeaJrvX1i3OO5z6-foEZB347jzNOIl30DoQKWjActQuGwZqNg/viewform target="_blank">Reviewer Nomination</a>: Similar to other shared tasks (e.g. SemEval), we ask at least one author per paper also acts as a reviewer. Please nominate the reviewer by the submssion deadline. If you do not nominate a reviewer, the first author or corresponding author will be automatically selected.</p>
+                    <br>
+                    <p>10.&nbsp;&nbsp;Each accepted task paper will be included in the SIGHAN-2024 proceedings. At least one author must register to present their developed system at the SIGHAN-2024 Workshop (16th August, collocated with ACL 2024, in Bangkok, Thailand).</p>
+                </div>
+                <p>The evaluation committee will select the Best Evaluation Paper Award and recommend two evaluation papers for publication in the <a href=https://www.mdpi.com/journal/electronics/special_issues/Affective_Computing target="_blank">Special Issue on New Advances in Affective Computing， Electronics (IF 2.9)</a>.</p>
+            </div>  
+        </div>
+    </div> -->
+    
+    <!-- ============================================================================ -->
+
+    <div class="special_session" id='special'>
+        
+        <div class="introduce_div_before">
+            <div class="introduce_div">
+                <h1>Important Dates</h1>
+                <div class="part">
+                    <!-- <h2>Important Dates</h2> -->
+                    <!-- <h2>V.&emsp;Important Dates</h2> -->
+                        <!-- <p>Registration:
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe74D0A_sWAOKH_xtz9_uF7ws9G-cdF2gYiEm5YwONQOcctrA/viewform?vc=0&c=0&w=1&flr=0" target="_blank" title="uninstructed">
+                                Click here
+                            </a>
+                        </p> -->
+                    
+                    <div class="list">
+                        <ul>
+                          <li>Release of training data: <strong>April 15, 2022</strong></li>
+                            <li>Release of test data: <strong>August 31, 2023</strong></li>
+                            <li>Testing results submission due: <strong>September 2, 2022</strong></li>
+                            <li>Release of evaluation results: <strong>September 5, 2022</strong></li>
+                            <li>System description paper due: <strong>September 20, 2023</strong></li>
+                            <li>Notification of Acceptance: <strong>September 30, 2023</strong></li>
+                            <li>Camera-ready deadline: <strong>October 7, 2023</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================================ -->
+    
+    <div class="sharetask" id="ref">
+        
+        <div class="part">
+            <h1>References</h1>
+            <!-- <h2>References</h2> -->
+            <div class="list">
+                
+                <ul>
+                    <li>Hai Leong Chieu, and Hwee Tou Ng (2003). Named entity recognition with a maximum approach. In Proceedings of 7th Conference on Natural Language Learning (CoNLL’03), pp. 160–163.</li>
+                    <li>Jason P. C. Chiu, and Eric Nichols (2016). Named entity recognition with bidirectional LSTM-CNNs. Transactions of the Association for Computational Linguistics, 4:357–370.</li>
+                    <li>Jingzhou He, and Houfeng Wang (2008). Chinese named entity recognition and word segmentation based on character. In Proceedings of the 6th SIGHAN Workshop on Chinese Language Processing (SIGHAN’08), pp. 128–132.</li>
+                    <li>Guillaume Lample, Miguel Ballesteros, Sandeep Subramanian, Kazuya Kawakami, and Chris Dyer (2016). Neural architectures for named entity recognition. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT’16), pp. 260–270.</li>
+                    <li>Lung-Hao Lee, and Yi Lu (2021). Multiple Embeddings Enhanced Multi-Graph Neural Networks for Chinese Healthcare Named Entity Recognition. IEEE Journal of Biomedical and Health Informatics, 25(7): 2801- 2810.</li>
+                    <li>Haibo Li, Masato Hagiwara, Qi Li, and Heng Ji (2014). Comparison of the impact of word segmentation on name tagging for Chinese and Japanese. In Proceedings of the 9th International Conference on Language Resources and Evaluation (LREC’14), pp. 2532–2536.</li>
+                    <li>Liyuan Liu, Jingbo Shang, Xiang Ren, Frank F. Xu, Huan Gui, Jian Peng, and Jiawei Han (2018). Empower sequence labeling with task-aware neural language model. In Proceedings of the 32nd AAAI Conference on Artificial Intelligence (AAAI’18), pp. 5253–5260.</li>
+                    <li>Xuezhe Ma and Eduard Hovy (2016). End-to-end sequence labeling via Bi-directional LSTM-CNNs-CRF. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (ACL’16), pp. 1064–1074.</li>
+                    <li>Natalia Ponomareva, Ferran. Pla, Antonio Molina, and Paolo Rosso (2007). Biomedical named entity recognition: A poor knowledge HMM-based approach. In Proceedings of the 12th International Conference on Applications of Natural Language to Information Systems (NLDB’07), pp. 382–387.</li>
+                    <li>Chih-Hsuan Wei, Robert Leaman, and Zhiyong Lu (2015). SimConcept: A hybrid approach for simplifying composite named entities in biomedical text. IEEE Journal of Biomedical and Health Informatics, 19(4):1385–1391.</li>
+                    <li>Yue Zhang, and Jie Yang (2018). Chinese NER using lattice LSTM. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (ACL’18), pp. 1554–1564.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================================ -->
+    <div class="footer">
+        &copy;SIGHAN 2024 Shared Task || Updated: February 23, 2024
+    </div>
+    
+    <!-- 匯入main javascript -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>
